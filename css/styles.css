@@ -1,6 +1,4 @@
 /*
-new changed to be stage on gitbash
-*/
 Colors used
 Text Color: #1d1d1f;
 Visited Link: #800080
@@ -17,6 +15,7 @@ Visited Link: #800080
   --font22: 300 font 22px "roboto", sans-serif;
   --font18: 300 font 18px "roboto", sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
