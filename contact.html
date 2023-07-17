@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="Icons/Favicon/favicon4.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <!-- This will be my landing page, I want to create as my hand wireframe drawing, logo or not/ center all elements make it minimalistic-->
+
+  <body>
+    <header class="page-header">
+      <!--For Accesibilities screen reader alt= will be left empty so cant be read-->
+      <img src="Img/nombre-white.png" class="logo" alt="" />
+
+      <nav class="main-navigation page-header__item">
+        <ul role="menubar" class="navigation-list">
+          <li role="presentation">
+            <a
+              href="index.html"
+              class="navigation-list__item navigation-list__item--active"
+              >Home</a
+            >
+          </li>
+          <li role="presentation">
+            <a href="about.html" class="navigation-list__item">About</a>
+          </li>
+          <li role="presentation">
+            <a href="work.html" class="navigation-list__item">Work</a>
+          </li>
+          <li role="presentation">
+            <a href="contact.html" class="navigation-list__item">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Contact</h1>
+
+      <div class="contact-info">
+        <h3>Find me here!</h3>
+        <p>Nelkenweg 11</p>
+        <p>04209 Leipzig</p>
+        <p>Deutschland</p>
+        <p><a href="tel:+491746965085">Tel: +49 1746965085</a></p>
+        <p>
+          <a
+            href="mailto:pablo.lara.roloff@gmail.com?subject=Info&body=Hi%20Recruiter%2C%0A%0AI'm interested in exploring job opportunities with your company.%20Please feel free to reach out to me.%0A%0AThank%20you%21"
+            >Mail me</a
+          >
+        </p>
+      </div>
+
+      <div class="contact-form">
+        <form
+          action="mailto:pablo.lara.roloff@gmail.com"
+          method="post"
+          id="contact-form"
+        >
+          <label class="standard-label" for="contact-email">Email:</label>
+          <input type="email" id="contact-email" required />
+
+          <label class="standard-label" for="contact-telephone"
+            >Telephone:</label
+          >
+          <input type="tel" id="contact-telephone" />
+
+          <label class="standard-label" for="message">Message:</label>
+          <textarea id="message" maxlength="1300" required></textarea>
+
+          <input type="submit" value="Send message" />
+        </form>
+      </div>
+    </main>
+
+    <script src="js/tota11y.min.js"></script>
+  </body>
+
+  <footer class="page-footer">
+    <p id="find-me">Find me on</p>
+    <div class="icons-socialmedia">
+      <div class="social-icons">
+        <a href="https://github.com" target="_blank"
+          ><img
+            src="Icons/github/github.png"
+            alt="Github logo"
+            width="32"
+            height="32"
+        /></a>
+        <a href="https://twitter.com" target="_blank"
+          ><img
+            src="Icons/twitter/twitterblue.png"
+            alt="Twitter logo"
+            width="32"
+            height="32"
+        /></a>
+        <a href="https://www.linkedin.com/in/pablolararoloff" target="_blank"
+          ><img
+            src="Icons/linkedin/linkedinround.png"
+            alt="Linkedin logo"
+            width="32"
+            height="32"
+        /></a>
+      </div>
+    </div>
+  </footer>
+</html>
