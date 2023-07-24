@@ -23,8 +23,11 @@
 
   <body>
     <header class="page-header">
-      <!--For Accesibilities screen reader alt= will be left empty so cant be read-->
-      <img src="Img/nombre-white.png" class="logo" alt="" />
+      <!--For accessibility, if the image is purely decorative, use an empty alt attribute-->
+      <div class="page-header__item">
+        <span class="logo-text">Pablo Lara Roloff</span>
+        <!-- Text instead of the image -->
+      </div>
 
       <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
