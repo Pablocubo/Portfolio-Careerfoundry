@@ -26,16 +26,30 @@ header {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font: 300 22px "Roboto", sans-serif;
   color: var(--textcolor);
   position: relative;
-  padding: 18px;
+  padding: 0px;
   background: var(--backgroundcolor);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 footer {
   font-family: "Roboto", sans-serif;
+  width: 100%; /* Make the footer full width */
+  padding: 20px;
+  position: auto;
+  bottom: 0;
+  clear: both;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -44,7 +58,7 @@ a {
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
   font-size: var(--font33);
 }
 
@@ -53,27 +67,29 @@ p {
   font-size: var(--font22);
 }
 
+/* styles.css */
+
 /* Visited links */
 a:visited {
-  background-color: var(--primarycolor);
+  background-color: transparent;
 }
 
-/* Hover when the mouse goes on top of the link*/
+/* Hover when the mouse goes on top of the link */
 a:hover {
   font-weight: bold;
   color: var(--hovercolor);
 }
 
-/* Focus via keyboard navigation*/
+/* Focus via keyboard navigation */
 a:focus {
-  background-color: var(--primarycolor);
+  background-color: transparent;
   color: var(--secondarycolor);
 }
 
 .page-header {
   display: flex;
   width: 100%;
-  padding: 5px;
+  padding: 20px;
   align-items: center;
 }
 
@@ -87,12 +103,16 @@ a:focus {
 }
 
 .navigation-list {
-  list-style-type: none; /* Remove the dot */
+  display: flex;
+  justify-content: flex-end; /* aligns items to the right */
+  list-style-type: none; /* removes bullet points */
+  padding: 0; /* removes padding */
 }
 
 .navigation-list__item {
   text-decoration: none; /* Remove underline */
   font-weight: normal; /* Set normal font weight */
+  margin-left: 20px; /* add space between items */
 }
 
 .navigation-list__item--active {
@@ -100,16 +120,17 @@ a:focus {
 }
 
 .logo {
-  display: flex;
-  width: 13%;
-  height: 13%;
+  max-width: 80%; /* Set the maximum width to 30% of its container on larger screens */
+  height: auto; /* Allow the height to adjust proportionally to the width */
+  display: block; /* Ensure the image behaves as a block element */
+  margin: 0 auto; /* Center the image horizontally (optional) */
 }
 
-.page-footer {
-  clear: both;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 70%; /* Set the maximum width to 60% of its container on smaller screens */
+  }
 }
 
 .bold-text {
@@ -117,13 +138,48 @@ a:focus {
 }
 
 #find-me {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font: 300 18px "Roboto";
+}
+
+#copyright {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   text-align: center;
   font: 300 16px "Roboto";
 }
 
 .profile {
-  max-width: 500px;
+  position: relative;
+  text-align: justify;
+  max-width: 600px;
   margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 414px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .profile__portrait {
@@ -143,9 +199,27 @@ a:focus {
   transform: scale(1); /* Restore the original scale when clicked */
 }
 
-.blue {
+@media (max-width: 414px) {
+  .profile__portrait {
+    width: 70vw; /* Adjust the width based on viewport width */
+    height: auto;
+    max-width: 233px;
+    margin: 0 auto 20px; /* Adjust the margins as needed */
+    border-radius: 50%;
+    transition: transform 0.5s;
+  }
+}
+
+.code {
   color: var(--secondarycolor);
   font-weight: bold;
+}
+.code--active {
+  color: var(--secondarycolor);
+}
+
+.code:hover {
+  color: var(--primarycolor);
 }
 
 .button-container {
@@ -193,20 +267,6 @@ button:focus,
   width: 100%;
 }
 
-.grid__item {
-  background-color: var(--backgroundcolor);
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border: 2px solid var(--primarycolor);
-  margin-top: 20px;
-  text-align: center;
-  width: 100%; /* Adjust the width as desired */
-}
-
 /* end grid fallback, this will be display in older browsers that cannot display grid */
 
 .grid__item {
@@ -228,12 +288,6 @@ button:focus,
   grid-gap: 10px;
 }
 
-.page-footer {
-  display: grid;
-  justify-content: center;
-  align-items: end;
-}
-
 .icons-socialmedia {
   padding: 10px;
   border-radius: 10px;
@@ -251,10 +305,11 @@ button:focus,
 
 .experience-table div {
   border: 1px solid var(--secondarycolor);
-  padding: 10px;
+  padding: 7px;
   justify-items: center;
   border-radius: 10px;
   border: 2px solid var(--primarycolor);
+  text-align: center;
 }
 
 .experience-table .title {

@@ -10,6 +10,19 @@ Colors used
 Text Color: #1d1d1f;
 Visited Link: #800080
 */
+:root {
+  --primarycolor: #ffffff;
+  --secondarycolor: #1f1f1d;
+  --backgroundcolor: #2695a8;
+  --textcolor: #ffffff;
+  --hovercolor: #ffffff;
+  --buttoncolor: #296997;
+  --translucentcolor: rgba(0, 0, 0, 0.3);
+  --font33: 33px "roboto", sans-serif;
+  --font22: 300 22px "roboto", sans-serif;
+  --font18: 300 18px "roboto", sans-serif;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -17,52 +30,82 @@ Visited Link: #800080
 
 header {
   font: 300 18px "Roboto", sans-serif;
-  color: #1f1f1d;
+  color: var(--secondarycolor);
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   font: 300 22px "Roboto", sans-serif;
-  color: #ffffff;
+  color: var(--textcolor);
   position: relative;
-  padding: 18px;
-  background: #2695a8; /* Replace with your desired background color */
+  padding: 0px;
+  background: var(--backgroundcolor);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 footer {
-  font-style: "Roboto";
+  font-family: "Roboto", sans-serif;
+  width: 100%; /* Make the footer full width */
+  padding: 20px;
+  position: auto;
+  bottom: 0;
+  clear: both;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 a {
   text-align: center;
-  color: #ffffff;
+  color: var(--textcolor);
 }
 
 h1 {
-  text-align: left;
-  font-size: 33px;
+  text-align: center;
+  font-size: var(--font33);
 }
 
 p {
   text-align: left;
-  font-size: 22px;
+  font-size: var(--font22);
 }
+
+/* styles.css */
 
 /* Visited links */
 a:visited {
-  background-color: #ffffff;
+  background-color: var(--primarycolor);
 }
 
-/* Hover when the mouse goes on top of the link*/
+/* Hover when the mouse goes on top of the link */
 a:hover {
   font-weight: bold;
-  color: #ffffff;
+  color: var(--hovercolor);
 }
 
-/* Focus via keyboard navigation*/
+/* Focus via keyboard navigation */
 a:focus {
-  background-color: #ffffff;
-  color: #1f1f1d;
+  background-color: var(--primarycolor);
+  color: var(--secondarycolor);
 }
 
 .page-header {
@@ -70,7 +113,7 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 5px;
+  padding: 20px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -103,15 +146,83 @@ a:focus {
 }
 
 .logo {
+  max-width: 80%; /* Set the maximum width to 30% of its container on larger screens */
+  height: auto; /* Allow the height to adjust proportionally to the width */
+  display: block; /* Ensure the image behaves as a block element */
+  margin: 0 auto; /* Center the image horizontally (optional) */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 70%; /* Set the maximum width to 60% of its container on smaller screens */
+  }
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+#find-me {
+  position: relative;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 13%;
-  height: 13%;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  font: 300 18px "Roboto";
 }
 
-.page-footer {
-  clear: both;
+#copyright {
+  position: relative;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  font: 300 16px "Roboto";
+}
+
+.profile {
+  position: relative;
+  text-align: justify;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 414px) {
+  .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,20 +230,12 @@ a:focus {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-align: center;
-}
-.bold-text {
-  font-weight: bold;
-}
-
-#find-me {
-  text-align: center;
-  font: 300 16px "Roboto";
-}
-
-.profile {
-  max-width: 500px;
-  margin: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .profile__portrait {
@@ -157,9 +260,30 @@ a:focus {
   transform: scale(1); /* Restore the original scale when clicked */
 }
 
-.blue {
-  color: #1f1f1d;
+@media (max-width: 414px) {
+  .profile__portrait {
+    width: 70vw; /* Adjust the width based on viewport width */
+    height: auto;
+    max-width: 233px;
+    margin: 0 auto 20px; /* Adjust the margins as needed */
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+}
+
+.code {
+  color: var(--secondarycolor);
   font-weight: bold;
+}
+.code--active {
+  color: var(--secondarycolor);
+}
+
+.code:hover {
+  color: var(--primarycolor);
 }
 
 .button-container {
@@ -172,27 +296,7 @@ a:focus {
   margin-top: 4vh;
 }
 
-.button {
-  display: block;
-  margin: 0 auto; /* overwrites browser defaults and resets the border */
-  border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  font-family: inherit;
-  /* styles the button */
-  background-color: #296997;
-  color: #ffffff !important;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 9px;
-  /* width of the border, type, color */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  -webkit-transition-duration: 0.9s;
-  transition-duration: 0.9s;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-}
-
+.button,
 button {
   display: block;
   margin: 0 auto; /* overwrites browser defaults and resets the border */
@@ -201,67 +305,28 @@ button {
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the button */
-  background-color: #296997;
-  color: #ffffff !important;
+  background-color: var(--buttoncolor);
+  color: var(--textcolor);
   text-decoration: none;
   padding: 10px;
   border-radius: 9px;
   /* width of the border, type, color */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--translucentcolor);
   -webkit-transition-duration: 0.9s;
   transition-duration: 0.9s;
   -webkit-transition-property: opacity;
   transition-property: opacity;
 }
 
-button:hover {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.7;
-  color: #ffffff !important;
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -webkit-transition: -webkit-transform 0.9s;
-  transition: -webkit-transform 0.9s;
-  transition: transform 0.9s;
-  transition: transform 0.9s, -webkit-transform 0.9s;
-}
-
-button:focus {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.7;
-  color: #ffffff !important;
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -webkit-transition: -webkit-transform 0.9s;
-  transition: -webkit-transform 0.9s;
-  transition: transform 0.9s;
-  transition: transform 0.9s, -webkit-transform 0.9s;
-}
-
-.button:hover {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.7;
-  color: #ffffff !important;
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -webkit-transition: -webkit-transform 0.9s;
-  transition: -webkit-transform 0.9s;
-  transition: transform 0.9s;
-  transition: transform 0.9s, -webkit-transform 0.9s;
-}
-
+button:hover,
+button:focus,
+.button:hover,
 .button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.7;
-  color: #ffffff !important;
+  color: var(--textcolor);
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   -webkit-transition: -webkit-transform 0.9s;
@@ -276,33 +341,10 @@ button:focus {
   width: 100%;
 }
 
-.grid__item {
-  background-color: #2695a8;
-  padding: 10px;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: 2px solid #ffffff;
-  margin-top: 20px;
-  text-align: center;
-  width: 100%; /* Adjust the width as desired */
-}
-
 /* end grid fallback, this will be display in older browsers that cannot display grid */
 
 .grid__item {
-  background-color: #2695a8;
+  background-color: var(--backgroundcolor);
   padding: 10px;
   border-radius: 10px;
   display: -webkit-box;
@@ -318,7 +360,7 @@ button:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--primarycolor);
   margin-top: 20px;
   text-align: center;
 }
@@ -329,17 +371,6 @@ button:focus {
   -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
-}
-
-.page-footer {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
 }
 
 .icons-socialmedia {
@@ -367,11 +398,11 @@ button:focus {
 }
 
 .experience-table div {
-  border: 1px solid #1f1f1d;
+  border: 1px solid var(--secondarycolor);
   padding: 10px;
   justify-items: center;
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--primarycolor);
 }
 
 .experience-table .title {
