@@ -119,11 +119,9 @@ a:focus {
   font-weight: bold; /* Set bold font weight for active page */
 }
 
-.logo {
-  max-width: 80%; /* Set the maximum width to 30% of its container on larger screens */
-  height: auto; /* Allow the height to adjust proportionally to the width */
-  display: block; /* Ensure the image behaves as a block element */
-  margin: 0 auto; /* Center the image horizontally (optional) */
+.logo-text {
+  font-size: 22px; /* Same font size as the navigation items */
+  color: var(--textcolor); /* Use the same text color as the navigation items */
 }
 
 /* Media Query for smaller screens */
@@ -454,7 +452,7 @@ input[type="submit"] {
     margin-left: 10px; /* Reduce the space between items for smaller screens */
   }
 
-  .logo {
+  .logo-text {
     display: none; /* Hide the logo on smaller screens */
   }
 }
