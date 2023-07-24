@@ -31,7 +31,6 @@ body {
   font: 300 22px "Roboto", sans-serif;
   color: var(--textcolor);
   position: relative;
-  padding: 0px;
   background: var(--backgroundcolor);
   background-attachment: fixed;
   min-height: 100vh;
@@ -436,14 +435,14 @@ input[type="submit"] {
 @media screen and (max-width: 428px) {
   .navigation-list {
     justify-content: center; /* Center the navigation items on smaller screens */
-    position: fixed; /* Fix the navigation at the top of the screen */
+    position: relative; /* Fix the navigation at the top of the screen */
     top: 0;
     left: 0;
     width: 100%;
     background-color: var(
       --backgroundcolor
     ); /* Use the provided background color */
-    padding: 10px 0; /* Add some padding for spacing */
+    padding: none; /* Add some padding for spacing */
     z-index: 999; /* Make sure it stays on top of other elements */
   }
 
