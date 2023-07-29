@@ -4,16 +4,16 @@ Text Color: #1d1d1f;
 Visited Link: #800080
 */
 :root {
+  --backgroundcolor: #2695a8;
+  --buttoncolor: #296997;
+  --font18: 300 18px "roboto", sans-serif;
+  --font22: 300 22px "roboto", sans-serif;
+  --font33: 33px "roboto", sans-serif;
+  --hovercolor: #ffffff;
   --primarycolor: #ffffff;
   --secondarycolor: #1f1f1d;
-  --backgroundcolor: #2695a8;
   --textcolor: #ffffff;
-  --hovercolor: #ffffff;
-  --buttoncolor: #296997;
   --translucentcolor: rgba(0, 0, 0, 0.3);
-  --font33: 33px "roboto", sans-serif;
-  --font22: 300 22px "roboto", sans-serif;
-  --font18: 300 18px "roboto", sans-serif;
 }
 
 * {
@@ -21,49 +21,50 @@ Visited Link: #800080
 }
 
 header {
-  font: 300 18px "Roboto", sans-serif;
   color: var(--secondarycolor);
+  font: 300 18px "Roboto", sans-serif;
 }
 
 body {
+  background-attachment: fixed;
+  background: var(--backgroundcolor);
+  color: var(--textcolor);
   display: flex;
   flex-direction: column;
   font: 300 22px "Roboto", sans-serif;
-  color: var(--textcolor);
-  position: relative;
-  background: var(--backgroundcolor);
-  background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
 }
 
 footer {
-  font-family: "Roboto", sans-serif;
-  width: 100%; /* Make the footer full width */
+  /* Make the footer full width */
   padding: 20px;
-  position: auto;
+  align-items: center;
   bottom: 0;
   clear: both;
-  position: relative;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  font-family: "Roboto", sans-serif;
   justify-content: center;
-  align-items: center;
+  position: auto;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 a {
-  text-align: center;
   color: var(--textcolor);
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   font-size: var(--font33);
+  text-align: center;
 }
 
 p {
-  text-align: center;
   font-size: var(--font22);
+  text-align: center;
 }
 
 /* Visited links */
@@ -73,8 +74,8 @@ a:visited {
 
 /* Hover when the mouse goes on top of the link */
 a:hover {
-  font-weight: bold;
   color: var(--hovercolor);
+  font-weight: bold;
 }
 
 /* Focus via keyboard navigation */
@@ -84,10 +85,12 @@ a:focus {
 }
 
 .page-header {
-  display: flex;
-  width: 100%;
-  padding: 10px 70px 10px;
   align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px 70px 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .page-header__item {
@@ -100,32 +103,42 @@ a:focus {
 }
 
 .navigation-list {
+  /* aligns items to the right */
+  list-style-type: none;
+  /* removes bullet points */
+  padding: 0;
+  /* removes padding */
   display: flex;
-  justify-content: flex-end; /* aligns items to the right */
-  list-style-type: none; /* removes bullet points */
-  padding: 0; /* removes padding */
+  justify-content: flex-end;
 }
 
 .navigation-list__item {
-  text-decoration: none; /* Remove underline */
-  font-weight: normal; /* Set normal font weight */
-  margin-left: 20px; /* add space between items */
+  /* Remove underline */
+  font-weight: normal;
+  /* Set normal font weight */
+  margin-left: 20px;
+  /* add space between items */
+  text-decoration: none;
 }
 
 .navigation-list__item--active {
-  font-weight: bold; /* Set bold font weight for active page */
+  /* Set bold font weight for active page */
+  font-weight: bold;
 }
 
 .logo-text {
-  font-size: 18px; /* Same font size as the navigation items */
-  color: var(--textcolor); /* Use the same text color as the navigation items */
+  /* Same font size as the navigation items */
+  color: var(--textcolor);
+  /* Use the same text color as the navigation items */
   font-weight: bolder;
+  font-size: 18px;
 }
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
   .logo {
-    max-width: 70%; /* Set the maximum width to 60% of its container on smaller screens */
+    max-width: 70%;
+    /* Set the maximum width to 60% of its container on smaller screens */
   }
 }
 
@@ -134,74 +147,79 @@ a:focus {
 }
 
 #find-me {
-  position: relative;
+  align-items: flex-end;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
   font: 300 18px "Roboto";
+  justify-content: center;
+  position: relative;
+  text-align: center;
 }
 
 #copyright {
-  position: relative;
+  align-items: flex-end;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
   font: 300 16px "Roboto";
+  justify-content: center;
+  position: relative;
+  text-align: center;
 }
 
 .profile {
+  margin: auto;
+  max-width: 600px;
+  padding: 20px;
   position: relative;
   text-align: justify;
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
 }
 
 @media (max-width: 414px) {
   .profile {
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
   }
 }
 
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex-grow: 1;
 }
 
 .profile__portrait {
+  /* Add a transition for smooth animation */
+  border-radius: 50%;
   float: right;
-  width: 233px;
   height: auto;
   margin-right: 40px;
-  border-radius: 50%;
-  transition: transform 0.5s; /* Add a transition for smooth animation */
+  transition: transform 0.5s;
+  width: 233px;
 }
 
 .profile__portrait:hover {
-  transform: scale(1.05); /* Increase the scale when hovering */
+  /* Increase the scale when hovering */
+  transform: scale(1.05);
 }
 
 .profile__portrait:active {
-  transform: scale(1); /* Restore the original scale when clicked */
+  /* Restore the original scale when clicked */
+  transform: scale(1);
 }
 
 @media (max-width: 414px) {
   .profile__portrait {
-    width: 70vw; /* Adjust the width based on viewport width */
-    height: auto;
-    max-width: 233px;
-    margin: 0 auto 20px; /* Adjust the margins as needed */
+    width: 70vw;
+    /* Adjust the margins as needed */
     border-radius: 50%;
+    /* Adjust the width based on viewport width */
+    height: auto;
+    margin: 0 auto 20px;
+    max-width: 233px;
     transition: transform 0.5s;
   }
 }
@@ -210,6 +228,7 @@ main {
   color: var(--secondarycolor);
   font-weight: bold;
 }
+
 .code--active {
   color: var(--secondarycolor);
 }
@@ -226,20 +245,21 @@ main {
 
 .button,
 button {
-  display: block;
-  margin: 0 auto; /* overwrites browser defaults and resets the border */
+  /* overwrites browser defaults and resets the border */
   border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  font-family: inherit;
   /* styles the button */
   background-color: var(--buttoncolor);
-  color: var(--textcolor);
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 9px;
+  /* takes the font from the outer container */
+  font-family: inherit;
   /* width of the border, type, color */
   border-bottom: 2px solid var(--translucentcolor);
+  border-radius: 9px;
+  color: var(--textcolor);
+  display: block;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px;
+  text-decoration: none;
   transition-duration: 0.9s;
   transition-property: opacity;
 }
@@ -266,66 +286,66 @@ button:focus,
 /* end grid fallback, this will be display in older browsers that cannot display grid */
 
 .grid__item {
+  align-items: center;
   background-color: var(--backgroundcolor);
-  padding: 10px;
   border-radius: 10px;
+  border: 2px solid var(--primarycolor);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  border: 2px solid var(--primarycolor);
   margin-top: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .icons-socialmedia {
-  padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-items: center;
   justify-content: center;
+  justify-items: center;
+  padding: 10px;
 }
 
 .experience-table {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .experience-table div {
-  border: 1px solid var(--secondarycolor);
-  padding: 7px;
-  justify-items: center;
   border-radius: 10px;
+  border: 1px solid var(--secondarycolor);
   border: 2px solid var(--primarycolor);
+  justify-items: center;
+  padding: 7px;
   text-align: center;
 }
 
 .experience-table .title {
+  font-weight: bold;
   grid-column: 1 / -1;
   text-align: center;
-  font-weight: bold;
 }
 
 .contact {
+  align-items: start;
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
   padding: 20px;
 }
 
 .contact-info {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -338,9 +358,9 @@ button:focus,
 }
 
 .contact-form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .standard-label {
@@ -356,15 +376,15 @@ textarea {
 }
 
 input[type="submit"] {
-  width: auto;
   padding: 5px 10px;
+  width: auto;
 }
 
 @supports (display: grid) {
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 0;
   }
 
@@ -382,10 +402,12 @@ input[type="submit"] {
     .grid {
       grid-gap: 10px;
     }
+
     .grid__item:last-child {
       grid-column: auto / auto;
       grid-row: auto / auto;
     }
+
     h1 {
       font-size: 22px;
     }
@@ -396,6 +418,7 @@ input[type="submit"] {
   from {
     fill: #edc655;
   }
+
   to {
     fill: #f76414;
   }
@@ -409,6 +432,7 @@ input[type="submit"] {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -422,6 +446,7 @@ input[type="submit"] {
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
@@ -434,23 +459,30 @@ input[type="submit"] {
 /* Media Query for iPhone 12 Pro */
 @media screen and (max-width: 428px) {
   .navigation-list {
-    justify-content: center; /* Center the navigation items on smaller screens */
-    position: relative; /* Fix the navigation at the top of the screen */
+    justify-content: center;
+    /* Add some padding for spacing */
+    align-items: center;
+    z-index: 999;
+    /* Center the navigation items on smaller screens */
+    position: relative;
+    /* Fix the navigation at the top of the screen */
     top: 0;
+    /* Make sure it stays on top of other elements */
+    /* Use the provided background color */
+    padding: none;
+    background-color: var(--backgroundcolor);
     left: 0;
     width: 100%;
-    background-color: var(
-      --backgroundcolor
-    ); /* Use the provided background color */
-    padding: none; /* Add some padding for spacing */
-    z-index: 999; /* Make sure it stays on top of other elements */
   }
 
   .navigation-list__item {
-    margin-left: 10px; /* Reduce the space between items for smaller screens */
+    /* Equalize the space on the left and right of each item */
+    margin: 0 10px;
+    text-align: center;
   }
 
   .logo-text {
-    display: none; /* Hide the logo on smaller screens */
+    /* Hide the logo on smaller screens */
+    display: none;
   }
 }
