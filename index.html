@@ -16,6 +16,43 @@
   </head>
 
   <body>
+    <script>
+      // Function to make the website content appear slowly
+      function fadeInContent() {
+        const contentElements = document.querySelectorAll("body *");
+        const duration = 7000; // 7 seconds
+
+        let startTime = null;
+
+        function fadeIn(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = timestamp - startTime;
+
+          contentElements.forEach((element) => {
+            const opacity = Math.min(1, progress / duration);
+            element.style.opacity = opacity;
+          });
+
+          if (progress < duration) {
+            requestAnimationFrame(fadeIn);
+          }
+        }
+
+        requestAnimationFrame(fadeIn);
+      }
+
+      // Check if the content has been shown before
+      const hasShownContent = localStorage.getItem("hasShownContent");
+
+      // If not, apply the fade-in effect and set the flag in localStorage
+      if (!hasShownContent) {
+        window.addEventListener("load", () => {
+          fadeInContent();
+          localStorage.setItem("hasShownContent", true);
+        });
+      }
+    </script>
+
     <header class="page-header">
       <!--For accessibility, if the image is purely decorative, use an empty alt attribute-->
       <div class="page-header__item">
@@ -54,7 +91,9 @@
           My Name is Pablo. I am a
           <b>Full stack web developer</b> from Chile.
         </p>
-        <a href="#">Check out some of my <span class="code">code</span></a>
+        <a href="https://github.com/pablocubo" target="_blank"
+          >Check out some of my <span class="code">code</span></a
+        >
       </div>
     </main>
 
