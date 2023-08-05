@@ -16,6 +16,10 @@ Visited Link: #800080
   --font18: 300 18px "roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,6 +38,8 @@ body {
   background: var(--backgroundcolor);
   background-attachment: fixed;
   min-height: 100vh;
+  padding: 0px;
+  margin: 0;
 }
 
 footer {
@@ -86,7 +92,7 @@ a:focus {
 .page-header {
   display: flex;
   width: 100%;
-  padding: 10px 70px 10px;
+  padding: 10px 60px 10px;
   align-items: center;
 }
 
@@ -109,7 +115,8 @@ a:focus {
 .navigation-list__item {
   text-decoration: none; /* Remove underline */
   font-weight: normal; /* Set normal font weight */
-  margin-left: 20px; /* add space between items */
+  margin-left: 10px; /* add space between items */
+  margin-right: 10px;
 }
 
 .navigation-list__item--active {
@@ -120,6 +127,11 @@ a:focus {
   font-size: 18px; /* Same font size as the navigation items */
   color: var(--textcolor); /* Use the same text color as the navigation items */
   font-weight: bolder;
+}
+
+.logo-text:hover {
+  font-weight: bold;
+  color: var(--hovercolor);
 }
 
 /* Media Query for smaller screens */
@@ -176,6 +188,7 @@ main {
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  padding: 20px;
 }
 
 .profile__portrait {
@@ -258,10 +271,10 @@ button:focus,
 }
 
 /* inline-block= start grid fallback, in old browser will be display at */
-.grid__item {
+/* .grid__item {
   display: inline-block;
   width: 100%;
-}
+} */
 
 /* end grid fallback, this will be display in older browsers that cannot display grid */
 
@@ -296,21 +309,21 @@ button:focus,
 .experience-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 16px;
+  padding: 0;
+  text-align: center;
 }
 
 .experience-table div {
-  border: 1px solid var(--secondarycolor);
-  padding: 7px;
-  justify-items: center;
-  border-radius: 10px;
   border: 2px solid var(--primarycolor);
+  padding: 3px;
+  justify-items: center;
+  border-radius: 9px;
   text-align: center;
 }
 
 .experience-table .title {
   grid-column: 1 / -1;
-  text-align: center;
   font-weight: bold;
 }
 
@@ -365,6 +378,7 @@ input[type="submit"] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    padding: 0px;
     margin: 0;
   }
 
@@ -433,24 +447,24 @@ input[type="submit"] {
 
 /* Media Query for iPhone 12 Pro */
 @media screen and (max-width: 428px) {
-  .navigation-list {
-    justify-content: center; /* Center the navigation items on smaller screens */
-    position: relative; /* Fix the navigation at the top of the screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(
-      --backgroundcolor
-    ); /* Use the provided background color */
-    padding: none; /* Add some padding for spacing */
-    z-index: 999; /* Make sure it stays on top of other elements */
-  }
-
-  .navigation-list__item {
-    margin-left: 10px; /* Reduce the space between items for smaller screens */
+  .page-header {
+    justify-content: center;
   }
 
   .logo-text {
-    display: none; /* Hide the logo on smaller screens */
+    display: none;
+  }
+
+  .navigation-list {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: none;
+    z-index: 999;
+  }
+
+  .navigation-list__item {
+    display: inline-block;
+    margin-left: 0 10px;
   }
 }
