@@ -287,6 +287,11 @@ button:focus,
   transition: transform 0.9s;
 }
 
+.grid {
+  display: grid;
+  padding: 20px;
+}
+
 /* inline-block= start grid fallback, in old browser will be display at */
 /* .grid__item {
   display: inline-block;
